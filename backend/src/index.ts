@@ -7,12 +7,12 @@ interface User  {
   room: string
 }
 
-let userCount = 0;
+
 let allSockets: User[] = [];  // MAPS and RECORDS
 
 wss.on("connection", ( socket ) => {
-  userCount ++ ;
-  console.log(`User ${userCount} connected !`);
+  
+  
 
   socket.on("message", (message) => {
     const parsedMessage = JSON.parse(message as unknown as string);
@@ -38,3 +38,5 @@ wss.on("connection", ( socket ) => {
   });
   
 })
+
+//replace, ts-ignore
